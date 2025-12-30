@@ -1,0 +1,28 @@
+# --- Python y Compilados ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Entorno Virtual (Tus librerías instaladas) ---
+venv/
+env/
+.env
+
+# --- Base de Datos (¡MUY IMPORTANTE!) ---
+# Esto evita que se suban tus usuarios, contraseñas y datos locales.
+db.sqlite3
+db.sqlite3-journal
+
+# --- Archivos Multimedia (Imágenes subidas) ---
+# Subimos la carpeta, pero no su contenido
+media/
+!media/.gitkeep
+
+# --- IDEs y Sistema Operativo (Basura local) ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Archivos estáticos recolectados (Solo para producción) ---
+staticfiles/
