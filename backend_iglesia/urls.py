@@ -21,4 +21,6 @@ from web import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name='inicio'),
+    path('inicio/', views.inicio, name='inicio'),
+    path('devocionales/', views.lista_devocionales, name='devocionales'),
 ]
