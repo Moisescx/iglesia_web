@@ -59,3 +59,18 @@ class Devocional(models.Model):
             
         # Si no es ninguno, devolvemos el original
         return url
+    
+# web/models.py
+
+class Lider(models.Model):
+    nombre = models.CharField(max_length=100, help_text="Ej: Pastor Juan Pérez")
+    cargo = models.CharField(max_length=100, help_text="Ej: Pastor Principal, Líder de Jóvenes")
+    foto = models.ImageField(upload_to='lideres/', help_text="Foto del líder (trata que sean cuadradas)")
+    biografia = models.TextField(blank=True, null=True, help_text="Breve descripción o versículo favorito")
+    orden = models.IntegerField(default=0, help_text="Número para ordenar (1 sale primero, 2 segundo, etc.)")
+
+    class Meta:
+        verbose_name_plural = "Líderes"
+
+    def __str__(self):
+        return self.nombre
