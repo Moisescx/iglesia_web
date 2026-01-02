@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+        <div class="pt-10">
+            <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Contáctanos</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mt-2 mb-6 leading-tight">
+                Estamos aquí para escucharte y orar por ti.
+            </h1>
+            <p class="text-lg text-gray-500 mb-8">
+                Ya sea que tengas una pregunta, una petición de oración o simplemente quieras saludar,
+                nos encantaría saber de ti. Llena el formulario y nuestro equipo te responderá lo antes posible.
+            </p>
+
+            <div class="space-y-4">
+                <div class="flex items-center text-gray-600">
+                    <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span>contacto@iglesiamontelosolivos.cl</span>
+                </div>
+                <div class="flex items-center text-gray-600">
+                    <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Respondemos en menos de 24 horas</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700">
+
+            {% if messages %}
+            {% for message in messages %}
+            <div class="bg-green-100 dark:bg-green-900 border-l-4 border-green-500 text-green-700 dark:text-green-200 p-4 mb-6" role="alert">
+                <p class="font-bold">¡Gracias!</p>
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <form method="POST" class="space-y-6">
+                {% csrf_token %}
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Nombre Completo</label>
+                    {{ formulario.nombre }}
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Email</label>
+                        {{ formulario.email }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Teléfono (Opcional)</label>
+                        {{ formulario.telefono }}
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Asunto</label>
+                    {{ formulario.motivo }}
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Mensaje</label>
+                    {{ formulario.cuerpo }}
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition duration-300 transform hover:scale-[1.02] shadow-lg shadow-blue-500/30">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

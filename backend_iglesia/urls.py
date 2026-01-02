@@ -26,6 +26,8 @@ urlpatterns = [
     path('inicio/', views.inicio, name='inicio'),
     path('devocionales/', views.lista_devocionales, name='devocionales'),
     path('nosotros/', views.quienes_somos, name='quienes_somos'),
+    path('contacto/', views.contacto, name='contacto'),
+    path('donar/', views.donar, name='donar'),
 ]
 
 if settings.DEBUG:

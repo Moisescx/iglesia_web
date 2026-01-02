@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iglesia Monte Los Olivos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                    },
+                },
+            },
+        }
+
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -15,26 +27,57 @@
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 flex flex-col min-h-screen">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <a href="#" class="text-2xl font-bold text-blue-950 flex items-center gap-2">
-                <span>✝️</span> Monte Los Olivos
-            </a>
-            <ul
-                class="flex flex-col md:flex-row items-center w-full md:w-auto space-y-3 md:space-y-0 md:space-x-6 font-medium text-gray-600">
-                <li><a href="{% url 'inicio' %}" class="hover:text-blue-700 transition">Inicio</a></li>
-                <li><a href="{% url 'devocionales' %}" class="hover:text-blue-700 transition">Devocionales</a></li>
-                <li><a href="{% url 'quienes_somos' %}" class="hover:text-blue-700 transition">Quiénes Somos</a></li>
-                <li><a href="#" class="hover:text-blue-700 transition">Eventos</a></li>
-                <li class="w-full md:w-auto">
-                    <a href="#"
-                        class="block w-full md:w-auto text-center bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
-                        Donar
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 ease-in-out bg-transparent text-white dark:text-gray-100 py-4">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+
+                <a href="{% url 'inicio' %}"
+                    class="text-2xl font-bold tracking-tighter flex items-center gap-2 z-50 relative">
+                    <span id="logo-text" class="text-white transition-colors duration-300">MONTE LOS OLIVOS</span>
+                </a>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="{% url 'inicio' %}"
+                        class="nav-link text-sm uppercase tracking-widest hover:text-blue-300 dark:hover:text-blue-300 transition">Inicio</a>
+                    <a href="{% url 'quienes_somos' %}"
+                        class="nav-link text-sm uppercase tracking-widest hover:text-blue-300 dark:hover:text-blue-300 transition">Nosotros</a>
+                    <a href="{% url 'devocionales' %}"
+                        class="nav-link text-sm uppercase tracking-widest hover:text-blue-300 dark:hover:text-blue-300 transition">Devocionales</a>    
+                    <a href="{% url 'contacto' %}"
+                        class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full font-bold text-sm transition transform hover:scale-105 shadow-lg">
+                        Contacto
                     </a>
-                </li>
-            </ul>
+                    <!--<a href="{% url 'donar' %}"
+                        class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full font-bold text-sm transition transform hover:scale-105 shadow-lg">
+                        Donar
+                    </a>-->
+                </div>
+
+                <div class="md:hidden z-50 flex items-center">
+                    <button id="mobile-menu-btn" class="focus:outline-none">
+                        <svg class="w-8 h-8 text-white transition-colors duration-300" id="menu-icon" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-blue-950/95 dark:bg-black/80 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 hidden">
+            <a href="{% url 'inicio' %}"
+                class="text-2xl font-bold text-white hover:text-blue-400 mobile-link">Inicio</a>
+            <a href="{% url 'quienes_somos' %}"
+                class="text-2xl font-bold text-white hover:text-blue-400 mobile-link">Nosotros</a>
+            <a href="{% url 'contacto' %}"
+                class="text-2xl font-bold text-blue-400 hover:text-white mobile-link">Contacto</a>
+            <a href="{% url 'devocionales' %}"
+                class="text-2xl font-bold text-blue-400 hover:text-white mobile-link">Devocionales</a>
+            <!--<a href="{% url 'donar' %}" class="text-2xl font-bold text-blue-400 hover:text-white mobile-link">Donar</a>-->
         </div>
     </nav>
 
@@ -42,7 +85,7 @@
     {% endblock %}
 
 
-    <footer class="bg-blue-950 text-blue-100 py-12 mt-auto border-t border-blue-900">
+    <footer class="bg-blue-950 text-blue-100 py-12 mt-auto border-t border-blue-900 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-800">
         <div class="container mx-auto px-4 text-center space-y-10">
 
             <div class="space-y-6">
@@ -82,6 +125,184 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // 1. LÓGICA DEL SCROLL (Transparente -> Vidrio)
+        const navbar = document.getElementById('navbar');
+        const logoText = document.getElementById('logo-text');
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Cuando bajas: Se pone vidrio. Ajuste según tema claro/oscuro
+                navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
+                if (document.documentElement.classList.contains('dark')) {
+                    navbar.classList.add('bg-gray-900/90', 'backdrop-blur-md', 'shadow-md', 'text-gray-100', 'py-2');
+                    logoText.classList.remove('text-white');
+                    logoText.classList.add('text-gray-100');
+                    if (menuIcon) {
+                        menuIcon.classList.remove('text-white');
+                        menuIcon.classList.add('text-gray-100');
+                    }
+                    navLinks.forEach(link => {
+                        link.classList.remove('hover:text-blue-300');
+                        link.classList.add('hover:text-blue-300');
+                    });
+                } else {
+                    navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'text-blue-950', 'py-2');
+                    logoText.classList.remove('text-white');
+                    logoText.classList.add('text-blue-950');
+                    if (menuIcon) {
+                        menuIcon.classList.remove('text-white');
+                        menuIcon.classList.add('text-blue-950');
+                    }
+                    navLinks.forEach(link => {
+                        link.classList.remove('hover:text-blue-300');
+                        link.classList.add('hover:text-blue-600');
+                    });
+                }
+
+            } else {
+                // Cuando estás arriba: Transparente y letras blancas
+                navbar.classList.add('bg-transparent', 'text-white', 'py-4');
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'text-blue-950', 'py-2', 'bg-gray-900/90', 'text-gray-100');
+
+                logoText.classList.add('text-white');
+                logoText.classList.remove('text-blue-950', 'text_gray-100');
+
+                if (menuIcon) {
+                    menuIcon.classList.add('text-white');
+                    menuIcon.classList.remove('text-blue-950', 'text_gray-100');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.add('hover:text-blue-300');
+                    link.classList.remove('hover:text-blue-600');
+                });
+            }
+        });
+
+        // 2. LÓGICA DEL MENÚ HAMBURGUESA (Abrir/Cerrar)
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden'); // Muestra u oculta el bloque
+
+            // Pequeño truco para animar la entrada (esperamos 10ms para quitar el translate)
+            setTimeout(() => {
+                menu.classList.toggle('translate-x-full');
+            }, 10);
+        });
+
+        // Cerrar el menú automáticamente al hacer clic en un enlace
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('translate-x-full');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+            });
+        });
+    </script>
+
+    <div class="fixed bottom-5 left-5 z-50 flex flex-col items-start gap-2 group">
+
+        <div id="accesibilidad-menu" class="hidden flex-col gap-3 mb-3 transition-all duration-300 origin-bottom-left">
+
+            <button onclick="cambiarTamanoTexto(1)"
+                class="bg-white dark:bg-gray-800 text-blue-900 dark:text-gray-100 w-12 h-12 rounded-full shadow-xl border border-gray-100 dark:border-gray-700 hover:scale-110 transition flex items-center justify-center group/btn"
+                title="Aumentar Texto">
+                <span class="font-bold text-xl group-hover/btn:text-blue-600">A+</span>
+            </button>
+
+            <button onclick="cambiarTamanoTexto(-1)"
+                class="bg-white dark:bg-gray-800 text-blue-900 dark:text-gray-100 w-12 h-12 rounded-full shadow-xl border border-gray-100 dark:border-gray-700 hover:scale-110 transition flex items-center justify-center group/btn"
+                title="Disminuir Texto">
+                <span class="font-bold text-sm group-hover/btn:text-blue-600">A-</span>
+            </button>
+
+            <button onclick="toggleDarkMode()"
+                class="bg-gray-800 dark:bg-yellow-400 text-white dark:text-gray-900 w-12 h-12 rounded-full shadow-xl hover:scale-110 transition flex items-center justify-center border border-gray-700 dark:border-yellow-500"
+                title="Alternar Tema">
+
+                <svg id="icon-moon" class="w-6 h-6 block dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+
+                <svg id="icon-sun" class="w-6 h-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                </svg>
+            </button>
+        </div>
+
+        <button onclick="toggleMenuAccesibilidad()"
+            class="bg-blue-600 hover:bg-blue-700 text-white w-14 h-14 rounded-full shadow-2xl transition transform hover:scale-105 border-4 border-white dark:border-gray-700 flex items-center justify-center">
+            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7.5c-2.5 0-4.5 1.5-4.5 3.5v4.5l1.5 6h6l1.5-6v-4.5c0-2-2-3.5-4.5-3.5Z" />
+                <circle cx="12" cy="12" r="10" stroke-width="1.5" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // 1. LÓGICA DEL MENÚ
+        function toggleMenuAccesibilidad() {
+            const menu = document.getElementById('accesibilidad-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+
+        // 2. LÓGICA DE TAMAÑO DE TEXTO
+        // Tailwind usa 'rem' (root em), así que si cambiamos el tamaño base del HTML, TODO cambia.
+        let zoomLevel = 100;
+
+        function cambiarTamanoTexto(direction) {
+            if (direction === 1 && zoomLevel < 130) zoomLevel += 10;
+            if (direction === -1 && zoomLevel > 80) zoomLevel -= 10;
+
+            document.documentElement.style.fontSize = zoomLevel + '%';
+            // Guardar preferencia
+            localStorage.setItem('zoomLevel', zoomLevel);
+        }
+
+        // 3. LÓGICA MODO OSCURO
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // 4. CARGAR PREFERENCIAS AL INICIO
+        // Esto hace que si recargas la página, recuerde cómo lo dejaste
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar Tema
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+
+            // Cargar Zoom
+            const savedZoom = localStorage.getItem('zoomLevel');
+            if (savedZoom) {
+                zoomLevel = parseInt(savedZoom);
+                document.documentElement.style.fontSize = zoomLevel + '%';
+            }
+        });
+    </script>
 
 </body>
 

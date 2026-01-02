@@ -18,21 +18,21 @@
 
     <div class="max-w-4xl mx-auto text-center mb-24">
         <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Quiénes Somos</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Una iglesia para todos</h2>
-        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mt-2 mb-6">Una iglesia para todos</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
             En Monte Los Olivos creemos que la iglesia no es un edificio, sino las personas.
             Desde nuestros inicios en 2024, hemos buscado ser un refugio de esperanza y un lugar
             donde cada persona pueda experimentar el amor transformador de Jesús.
         </p>
-        <p class="text-lg text-gray-600 leading-relaxed">
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             Nuestra visión es simple: Amar a Dios, amar a las personas y servir a nuestra comunidad
             con excelencia y pasión.
         </p>
     </div>
 
-    <div class="border-t border-gray-100 pt-16">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Nuestro Liderazgo</h2>
+    <div class="border-t border-gray-100 dark:border-gray-700 pt-16">
+            <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Nuestro Liderazgo</h2>
             <div class="w-16 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
@@ -45,15 +45,15 @@
                     <img src="{{ lider.foto.url }}" alt="{{ lider.nombre }}"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500 ease-in-out grayscale group-hover:grayscale-0">
                     {% else %}
-                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">Sin Foto</div>
+                    <div class="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-400 dark:text-gray-300">Sin Foto</div>
                     {% endif %}
                 </div>
 
                 <div class="text-center">
-                    <h3 class="text-xl font-bold text-gray-900">{{ lider.nombre }}</h3>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">{{ lider.nombre }}</h3>
                     <p class="text-blue-600 font-medium text-sm uppercase tracking-wide mt-1">{{ lider.cargo }}</p>
                     {% if lider.biografia %}
-                    <p class="text-gray-500 text-sm mt-3 px-4">{{ lider.biografia }}</p>
+                    <p class="text-gray-500 dark:text-gray-300 text-sm mt-3 px-4">{{ lider.biografia }}</p>
                     {% endif %}
                 </div>
             </div>

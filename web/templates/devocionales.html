@@ -12,15 +12,15 @@
 
         {% for devo in devocionales %}
         <div
-            class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col h-full">
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full">
 
-            <div class="aspect-w-16 aspect-h-9 bg-gray-100 relative group">
+            <div class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700 relative group">
                 <iframe src="{{ devo.get_embed_url }}" class="w-full h-full absolute inset-0 z-10"
                     style="border:none; overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                 </iframe>
 
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 z-0">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 dark:text-gray-400 z-0">
                     <svg class="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -29,17 +29,17 @@
                 </div>
             </div>
 
-            <div class="p-6 flex-grow flex flex-col">
+                <div class="p-6 flex-grow flex flex-col">
                 <div class="flex justify-between items-center mb-3">
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded uppercase">{{ devo.autora }}</span>
-                    <span class="text-sm text-gray-400">{{ devo.fecha|date:"d M Y" }}</span>
+                    <span class="text-sm text-gray-400 dark:text-gray-300">{{ devo.fecha|date:"d M Y" }}</span>
                 </div>
 
-                <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">{{ devo.titulo }}</h3>
-                <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">{{ devo.descripcion }}</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">{{ devo.titulo }}</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-grow">{{ devo.descripcion }}</p>
 
                 <a href="{{ devo.video_link }}" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center w-full px-4 py-2 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg transition border border-gray-200 text-sm font-semibold gap-2">
+                    class="inline-flex items-center justify-center w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-blue-50 text-gray-700 dark:text-gray-200 hover:text-blue-700 rounded-lg transition border border-gray-200 dark:border-gray-600 text-sm font-semibold gap-2">
                     {% if "facebook" in devo.video_link %}
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path

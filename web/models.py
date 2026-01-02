@@ -74,3 +74,15 @@ class Lider(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+class Mensaje(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    telefono = models.CharField(max_length=20, blank=True, null=True, help_text="Opcional")
+    motivo = models.CharField(max_length=200, help_text="Ej: Petición de Oración, Visita, Duda")
+    cuerpo = models.TextField(verbose_name="Mensaje")
+    fecha = models.DateTimeField(auto_now_add=True)
+    leido = models.BooleanField(default=False) # Para que marques los que ya respondiste
+
+    def __str__(self):
+        return f"{self.nombre} - {self.motivo}"

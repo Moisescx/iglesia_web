@@ -92,7 +92,7 @@
 
     <div class="relative container mx-auto px-4 text-center z-20 pt-20">
 
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-up">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-up dark:text-gray-100">
             {{ portada.titulo|default:"Bienvenidos a Casa" }}
         </h1>
 
@@ -106,24 +106,24 @@
                 Ver Horarios
             </a>
             <a href="#contacto"
-                class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white hover:text-blue-950 text-white font-bold py-4 px-10 rounded-full transition transform hover:scale-105">
+                class="bg-white/10 dark:bg-white/10 backdrop-blur-sm border border-white/30 dark:border-white/20 hover:bg-white dark:hover:bg-white hover:text-blue-950 dark:hover:text-blue-200 text-white dark:text-white font-bold py-4 px-10 rounded-full transition transform hover:scale-105">
                 Contáctanos
             </a>
         </div>
     </div>
 
     <div class="absolute bottom-0 left-0 w-full leading-[0] z-30">
-        <svg class="relative block w-full h-[60px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg"
+        <svg class="relative block w-full h-[60px] md:h-[100px] text-white dark:text-gray-700" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none"
             shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(249, 250, 251, 0.7)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(249, 250, 251, 0.5)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(249, 250, 251, 0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#f9fafb" />
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="currentColor" opacity="0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="currentColor" opacity="0.5" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="currentColor" opacity="0.3" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="currentColor" opacity="1" />
             </g>
         </svg>
     </div>
@@ -132,52 +132,52 @@
 <main class="flex-grow container mx-auto px-4 py-16 md:py-24">
 
     <div class="text-center mb-16 md:mb-20">
-        <h2 class="text-4xl font-extrabold text-gray-900">Nuestros Ministerios</h2>
+        <h2 class="text-4xl font-extrabold text-gray-900 dark:text-gray-100">Nuestros Ministerios</h2>
         <div class="w-16 h-1.5 bg-blue-600 mx-auto mt-5 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-blue-500 flex flex-col items-center md:items-start">
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-blue-500 flex flex-col items-center md:items-start border border-gray-100 dark:border-gray-700">
             <div class="text-5xl mb-6">👶</div>
-            <h3 class="text-2xl font-bold mb-3 text-gray-900">Niños</h3>
-            <p class="text-gray-600 text-center md:text-left">Escuela dominical divertida y segura para aprender de
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Niños</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Escuela dominical divertida y segura para aprender de
                 Jesús.</p>
         </div>
         <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-purple-500 flex flex-col items-center md:items-start">
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-purple-500 flex flex-col items-center md:items-start border border-gray-100 dark:border-gray-700">
             <div class="text-5xl mb-6">🔥</div>
-            <h3 class="text-2xl font-bold mb-3 text-gray-900">Jóvenes</h3>
-            <p class="text-gray-600 text-center md:text-left">Reuniones llenas de energía, música y amistad todos
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Jóvenes</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Reuniones llenas de energía, música y amistad todos
                 los sábados.</p>
         </div>
         <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-green-500 flex flex-col items-center md:items-start">
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-green-500 flex flex-col items-center md:items-start border border-gray-100 dark:border-gray-700">
             <div class="text-5xl mb-6">🤝</div>
-            <h3 class="text-2xl font-bold mb-3 text-gray-900">Ayuda Social</h3>
-            <p class="text-gray-600 text-center md:text-left">Servimos a nuestra comunidad a través de bancos de
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Ayuda Social</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Servimos a nuestra comunidad a través de bancos de
                 alimentos.</p>
         </div>
     </div>
 
     <div class="mt-20 mb-12 text-center">
-        <h2 class="text-3xl font-extrabold text-gray-900">Alimento para el Alma</h2>
-        <p class="text-gray-500 mt-2">Mensajes cortos de nuestras hermanas para tu semana.</p>
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">Alimento para el Alma</h2>
+        <p class="text-gray-500 dark:text-gray-300 mt-2">Mensajes cortos de nuestras hermanas para tu semana.</p>
     </div>
 
-   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         {% for devo in devocionales %}
         <div
-            class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col h-full">
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full">
 
-            <div class="aspect-w-16 aspect-h-9 bg-gray-100 relative group">
+            <div class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700 relative group">
                 <iframe src="{{ devo.get_embed_url }}" class="w-full h-full absolute inset-0 z-10"
                     style="border:none; overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                 </iframe>
 
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 z-0">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 dark:text-gray-400 z-0">
                     <svg class="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -186,17 +186,18 @@
                 </div>
             </div>
 
-            <div class="p-6 flex-grow flex flex-col">
+                <div class="p-6 flex-grow flex flex-col">
                 <div class="flex justify-between items-center mb-3">
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded uppercase">{{ devo.autora }}</span>
-                    <span class="text-sm text-gray-400">{{ devo.fecha|date:"d M Y" }}</span>
+
+                    <span class="text-sm text-gray-400 dark:text-gray-300">{{ devo.fecha|date:"d M Y" }}</span>
                 </div>
 
-                <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">{{ devo.titulo }}</h3>
-                <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">{{ devo.descripcion }}</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">{{ devo.titulo }}</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-grow">{{ devo.descripcion }}</p>
 
                 <a href="{{ devo.video_link }}" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center w-full px-4 py-2 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg transition border border-gray-200 text-sm font-semibold gap-2">
+                    class="inline-flex items-center justify-center w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-blue-50 text-gray-700 dark:text-gray-200 hover:text-blue-700 rounded-lg transition border border-gray-200 dark:border-gray-600 text-sm font-semibold gap-2">
                     {% if "facebook" in devo.video_link %}
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -222,11 +223,11 @@
 
     </div>
 
-    <section id="horarios" class="mt-24 p-12 bg-white rounded-3xl shadow-inner border border-gray-100">
+    <section id="horarios" class="mt-24 p-12 bg-white dark:bg-gray-800 rounded-3xl shadow-inner border border-gray-100 dark:border-gray-700">
         <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
             <div class="flex-1 space-y-4">
-                <h3 class="text-4xl font-extrabold text-blue-950">Iglesia Monte Los Olivos</h3>
-                <p class="text-2xl text-blue-900/80 max-w-xl mx-auto md:mx-0">Llevando esperanza a nuestra ciudad
+                <h3 class="text-4xl font-extrabold text-blue-950 dark:text-gray-100">Iglesia Monte Los Olivos</h3>
+                <p class="text-2xl text-blue-900/80 dark:text-gray-100 max-w-xl mx-auto md:mx-0">Llevando esperanza a nuestra ciudad
                     desde 2024.</p>
             </div>
             <div class="flex-1 w-full bg-blue-50 p-8 rounded-2xl border border-blue-100 shadow-lg shadow-blue-900/5">
@@ -253,5 +254,82 @@
     </section>
 
 </main>
+
+<section id="ubicacion" class="relative py-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop"
+            class="w-full h-full object-cover grayscale invert">
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+
+            <div
+                class="bg-blue-600 w-full md:w-1/3 flex items-center justify-center p-10 text-white relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <circle cx="0" cy="0" r="40" fill="white" />
+                        <circle cx="100" cy="100" r="60" fill="white" />
+                    </svg>
+                </div>
+
+                <div class="text-center relative z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <h3 class="text-2xl font-bold">Nuestra Casa</h3>
+                </div>
+            </div>
+
+                <div class="w-full md:w-2/3 p-10 flex flex-col justify-center">
+
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100">Dirección</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Luis Durand 4186 <br>Santiago, Chile</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100">Reunión Principal</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Domingos a las 10:30 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="https://maps.app.goo.gl/5iTEGT7TPXiFvfGG6" target="_blank"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-blue-700 bg-blue-100 hover:bg-blue-200 transition duration-300 w-full md:w-auto">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                        Abrir en Google Maps
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
