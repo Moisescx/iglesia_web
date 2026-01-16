@@ -113,9 +113,9 @@
     </div>
 
     <div class="absolute bottom-0 left-0 w-full leading-[0] z-30">
-        <svg class="relative block w-full h-[60px] md:h-[100px] text-white dark:text-gray-700" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none"
-            shape-rendering="auto">
+        <svg class="relative block w-full h-[60px] md:h-[100px] text-white dark:text-gray-700"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+            preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
@@ -141,21 +141,24 @@
             class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-blue-500 flex flex-col items-center md:items-start border border-gray-100 dark:border-gray-700">
             <div class="text-5xl mb-6">👶</div>
             <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Niños</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Escuela dominical divertida y segura para aprender de
+            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Escuela dominical divertida y segura
+                para aprender de
                 Jesús.</p>
         </div>
         <div
             class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-purple-500 flex flex-col items-center md:items-start border border-gray-100 dark:border-gray-700">
             <div class="text-5xl mb-6">🔥</div>
             <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Jóvenes</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Reuniones llenas de energía, música y amistad todos
+            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Reuniones llenas de energía, música y
+                amistad todos
                 los sábados.</p>
         </div>
         <div
             class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-t-4 border-green-500 flex flex-col items-center md:items-start border border-gray-100 dark:border-gray-700">
             <div class="text-5xl mb-6">🤝</div>
             <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Ayuda Social</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Servimos a nuestra comunidad a través de bancos de
+            <p class="text-gray-600 dark:text-gray-300 text-center md:text-left">Servimos a nuestra comunidad a través
+                de bancos de
                 alimentos.</p>
         </div>
     </div>
@@ -177,7 +180,8 @@
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                 </iframe>
 
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 dark:text-gray-400 z-0">
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 dark:text-gray-400 z-0">
                     <svg class="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -186,7 +190,7 @@
                 </div>
             </div>
 
-                <div class="p-6 flex-grow flex flex-col">
+            <div class="p-6 flex-grow flex flex-col">
                 <div class="flex justify-between items-center mb-3">
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded uppercase">{{ devo.autora }}</span>
 
@@ -194,7 +198,8 @@
                 </div>
 
                 <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">{{ devo.titulo }}</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-grow">{{ devo.descripcion }}</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-grow">{{ devo.descripcion }}
+                </p>
 
                 <a href="{{ devo.video_link }}" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center justify-center w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-blue-50 text-gray-700 dark:text-gray-200 hover:text-blue-700 rounded-lg transition border border-gray-200 dark:border-gray-600 text-sm font-semibold gap-2">
@@ -223,35 +228,53 @@
 
     </div>
 
-    <section id="horarios" class="mt-24 p-12 bg-white dark:bg-gray-800 rounded-3xl shadow-inner border border-gray-100 dark:border-gray-700">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
-            <div class="flex-1 space-y-4">
-                <h3 class="text-4xl font-extrabold text-blue-950 dark:text-gray-100">Iglesia Monte Los Olivos</h3>
-                <p class="text-2xl text-blue-900/80 dark:text-gray-100 max-w-xl mx-auto md:mx-0">Llevando esperanza a nuestra ciudad
-                    desde 2024.</p>
-            </div>
-            <div class="flex-1 w-full bg-blue-50 p-8 rounded-2xl border border-blue-100 shadow-lg shadow-blue-900/5">
-                <h4
-                    class="text-2xl font-bold text-blue-950 mb-6 flex items-center justify-center md:justify-start gap-3">
-                    <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    Horarios de Reuniones
-                </h4>
-                <div class="space-y-4 text-lg text-blue-900">
-                    <div class="flex justify-between items-center border-b border-blue-100 pb-3">
-                        <span class="font-semibold">Domingos</span>
-                        <span class="text-blue-600 font-bold">10:00 AM & 12:00 PM</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="font-semibold">Miércoles</span>
-                        <span class="text-blue-600 font-bold">7:30 PM</span>
-                    </div>
+   <section id="horarios" class="mt-24 p-12 bg-white dark:bg-gray-800 rounded-3xl shadow-inner border border-gray-100 dark:border-gray-700">
+    <div class="flex flex-col justify-center items-center text-center">
+        
+        <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-3xl border border-blue-100 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-md">
+
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-100 mb-6 flex items-center justify-center md:justify-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Horarios de Reuniones
+            </h3>
+
+            <div class="space-y-5">
+
+                <div class="flex flex-col items-start border-b border-blue-200 pb-4">
+                    <span class="text-xs font-bold text-blue-400 dark:text-blue-100 uppercase tracking-widest mb-1">
+                        Domingos
+                    </span>
+                    <span class="text-blue-900 dark:text-blue-100 font-extrabold text-2xl tracking-tight">
+                        5:00 p.m.
+                    </span>
                 </div>
+
+                <div class="flex flex-col items-start border-b border-blue-200 pb-4">
+                    <span class="text-xs font-bold text-blue-400 dark:text-blue-100 uppercase tracking-widest mb-1">
+                        Jueves
+                    </span>
+                    <span class="text-blue-900 dark:text-blue-100 font-extrabold text-2xl tracking-tight">
+                        5:00 p.m.
+                    </span>
+                </div>
+
+                <div class="flex flex-col items-start pt-1">
+                    <span class="text-xs font-bold text-blue-400 dark:text-blue-100 uppercase tracking-widest mb-1">
+                        Martes
+                    </span>
+                    <span class="text-blue-900 dark:text-blue-100 font-extrabold text-2xl tracking-tight">
+                        5:00 p.m.
+                    </span>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 </main>
 
@@ -263,7 +286,8 @@
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+        <div
+            class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
 
             <div
                 class="bg-blue-600 w-full md:w-1/3 flex items-center justify-center p-10 text-white relative overflow-hidden">
@@ -286,7 +310,7 @@
                 </div>
             </div>
 
-                <div class="w-full md:w-2/3 p-10 flex flex-col justify-center">
+            <div class="w-full md:w-2/3 p-10 flex flex-col justify-center">
 
                 <div class="space-y-6">
                     <div class="flex items-start">

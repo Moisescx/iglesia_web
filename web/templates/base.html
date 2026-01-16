@@ -29,39 +29,31 @@
 
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 flex flex-col min-h-screen">
 
-    <nav id="navbar" data-is-home="{% if request.path == '/' %}true{% else %}false{% endif %}" class="fixed w-full z-50 transition-all duration-300 ease-in-out flex items-center
-     {% if request.path == '/' %}
-        bg-transparent text-white py-6
-    {% else %}
-        bg-white/80 backdrop-blur-md shadow-sm text-blue-950 py-3 
-    {% endif %}">
+    <nav id="navbar"
+        class="fixed w-full z-50 transition-all duration-300 ease-in-out flex items-center bg-white/90 backdrop-blur-md shadow-sm text-blue-950 py-4">
 
         <div class="container mx-auto px-6 w-full">
             <div class="flex justify-between items-center">
 
                 <a href="{% url 'inicio' %}"
                     class="text-2xl font-bold tracking-tighter flex items-center gap-2 z-50 relative">
-                    <span id="logo-text" class="transition-colors duration-300 
-                {% if request.path == '/' %}text-white{% else %}text-blue-950{% endif %}">
+                    <span id="logo-text" class="text-blue-950 transition-all duration-300">
                         MONTE LOS OLIVOS
                     </span>
                 </a>
 
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="{% url 'inicio' %}"
-                        class="nav-link text-sm uppercase tracking-widest font-medium transition-colors 
-                   {% if request.path == '/' %}text-white hover:text-blue-300{% else %}text-gray-600 hover:text-blue-600{% endif %}">
+                        class="nav-link text-sm uppercase tracking-widest font-medium transition-colors text-gray-600 hover:text-blue-600">
                         Inicio
                     </a>
-                    <a href="{% url 'devocionales' %}"
-                        class="nav-link text-sm uppercase tracking-widest font-medium transition-colors 
-                   {% if request.path == '/' %}text-white hover:text-blue-300{% else %}text-gray-600 hover:text-blue-600{% endif %}">
-                        Devocionales
-                    </a>
                     <a href="{% url 'quienes_somos' %}"
-                        class="nav-link text-sm uppercase tracking-widest font-medium transition-colors 
-                   {% if request.path == '/' %}text-white hover:text-blue-300{% else %}text-gray-600 hover:text-blue-600{% endif %}">
+                        class="nav-link text-sm uppercase tracking-widest font-medium transition-colors text-gray-600 hover:text-blue-600">
                         Nosotros
+                    </a>
+                    <a href="{% url 'devocionales' %}"
+                        class="nav-link text-sm uppercase tracking-widest font-medium transition-colors text-gray-600 hover:text-blue-600">
+                        Devocionales
                     </a>
 
                     <a href="{% url 'contacto' %}"
@@ -72,9 +64,8 @@
 
                 <div class="md:hidden z-50 flex items-center">
                     <button id="mobile-menu-btn" class="focus:outline-none p-2">
-                        <svg id="menu-icon"
-                            class="w-8 h-8 transition-colors duration-300 {% if request.path == '/' %}text-white{% else %}text-blue-950{% endif %}"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg id="menu-icon" class="w-8 h-8 text-blue-950 transition-colors duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -134,108 +125,53 @@
             </div>
 
             <div class="border-t border-blue-900 pt-8 text-sm text-blue-300/70">
-                <p class="mb-1">&copy; 2024 Iglesia Monte Los Olivos. Llevando esperanza a la ciudad.</p>
-                <p>Desarrollado por MM en Recoleta, Santiago.</p>
+                <p class="mb-1">&copy; 2026 Iglesia Monte Los Olivos.</p>
+                <p>Desarrollado por MM</p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navbar = document.getElementById('navbar');
-            const logoText = document.getElementById('logo-text');
-            const menuIcon = document.getElementById('menu-icon');
-            const navLinks = document.querySelectorAll('.nav-link');
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('navbar');
 
-            // Leemos si estamos en el Home (True/False) desde el HTML
-            const isHome = navbar.getAttribute('data-is-home') === 'true';
-
-            // --- 1. LÓGICA DEL SCROLL (Solo para el Home) ---
-            window.addEventListener('scroll', () => {
-                // Si NO es el home, no hacemos nada (siempre se queda sólido)
-                if (!isHome) return;
-
-                if (window.scrollY > 50) {
-                    // BAJANDO: Modo Sólido (Blanco)
-                    navbar.classList.remove('bg-transparent', 'text-white', 'py-6');
-                    navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'text-blue-950', 'py-3');
-
-                    logoText.classList.remove('text-white');
-                    logoText.classList.add('text-blue-950');
-
-                    if (menuIcon) {
-                        menuIcon.classList.remove('text-white');
-                        menuIcon.classList.add('text-blue-950');
-                    }
-
-                    navLinks.forEach(link => {
-                        link.classList.remove('text-white', 'hover:text-blue-300');
-                        link.classList.add('text-gray-600', 'hover:text-blue-600');
-                    });
-
-                } else {
-                    // SUBIENDO (ARRIBA): Modo Transparente
-                    navbar.classList.add('bg-transparent', 'text-white', 'py-6');
-                    navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'text-blue-950', 'py-3');
-
-                    logoText.classList.add('text-white');
-                    logoText.classList.remove('text-blue-950');
-
-                    if (menuIcon) {
-                        menuIcon.classList.add('text-white');
-                        menuIcon.classList.remove('text-blue-950');
-                    }
-
-                    navLinks.forEach(link => {
-                        link.classList.add('text-white', 'hover:text-blue-300');
-                        link.classList.remove('text-gray-600', 'hover:text-blue-600');
-                    });
-                }
-            });
-
-            // --- 2. LÓGICA DEL MENÚ MÓVIL (Simple y Robusta) ---
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            function toggleMenu() {
-                const isHidden = menu.classList.contains('hidden');
-
-                if (isHidden) {
-                    // ABRIR
-                    menu.classList.remove('hidden');
-                    // Pequeño delay para permitir la animación CSS
-                    setTimeout(() => {
-                        menu.classList.remove('translate-x-full');
-                    }, 10);
-                    document.body.classList.add('overflow-hidden'); // Congela el scroll
-                } else {
-                    // CERRAR
-                    menu.classList.add('translate-x-full');
-                    setTimeout(() => {
-                        menu.classList.add('hidden');
-                    }, 300);
-                    document.body.classList.remove('overflow-hidden'); // Reactiva el scroll
-                }
+        // --- 1. LÓGICA DEL SCROLL (Solo achicar tamaño, no cambiar color) ---
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // AL BAJAR: Se hace más compacto (py-2) y con más sombra
+                navbar.classList.remove('py-4', 'shadow-sm');
+                navbar.classList.add('py-2', 'shadow-md');
+            } else {
+                // ARRIBA: Vuelve a su tamaño original (py-4)
+                navbar.classList.add('py-4', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow-md');
             }
-
-            if (btn) {
-                btn.addEventListener('click', toggleMenu);
-            }
-
-            // Cerrar al hacer click en un enlace
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
-
-            // Cerrar si toco el fondo oscuro (aunque ahora es pantalla completa, esto es seguridad)
-            menu.addEventListener('click', (e) => {
-                if (e.target === menu) {
-                    toggleMenu();
-                }
-            });
         });
-    </script>
+
+        // --- 2. LÓGICA DEL MENÚ MÓVIL (Igual que antes) ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isHidden = menu.classList.contains('hidden');
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                setTimeout(() => { menu.classList.remove('translate-x-full'); }, 10);
+                document.body.classList.add('overflow-hidden');
+            } else {
+                menu.classList.add('translate-x-full');
+                setTimeout(() => { menu.classList.add('hidden'); }, 300);
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        if(btn) btn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+        menu.addEventListener('click', (e) => { if (e.target === menu) toggleMenu(); });
+    });
+</script>
 
     <div class="fixed bottom-5 left-5 z-50 flex flex-col items-start gap-2 group">
 
